@@ -4,7 +4,7 @@ services:
   - docker
 
 before_instal:
-  - docker build -f DockerFile.dev -t darcad/docker-react .
+  - docker build -f Dockerfile.dev -t darcad/docker-react .
 
 script:
   - docker run -e CI=true darcad/docker-react npm run test
