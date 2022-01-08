@@ -1,0 +1,11 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_instal:
+  - docker build -f DockerFile.dev -t darcad/docker-react .
+
+script:
+  - docker run -e CI=true darcad/docker-react npm run test
+  
